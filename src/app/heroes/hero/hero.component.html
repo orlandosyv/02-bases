@@ -13,13 +13,21 @@
   <dd>{{ capitalizedName }}</dd>
 </dl>
 
-<input type="text" value="new Hero name" />
+<!-- <input type="text" value="new Hero name" /> -->
 <br />
 
-<button class="btn btn-primary m-2" (click)="this.changeHero('spiderMan')">
+<button
+  *ngIf="name !== 'Spiderman'"
+  class="btn btn-primary m-2"
+  (click)="this.changeHero('Spiderman')"
+>
   Cambiar Nombre
 </button>
 
-<button class="btn btn-primary m-2" (click)="this.changeAge(18)">
+<button
+  *ngIf="age !== 18"
+  class="btn btn-primary m-2"
+  (click)="this.changeAge(18)"
+>
   Cambiar Edad
 </button>
