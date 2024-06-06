@@ -1,11 +1,16 @@
-<p>character works!</p>
+<div class="border p-4">
 
-<h4>Agregar personaje</h4>
+  <h4>Add Dbz Character</h4>
 
-<form class="row">
-  <input type="text" class="form-control mb-2" placeholder="Name" />
+  <form class="row">
+    <input type="text" [(ngModel)]="character.name" name="name" class="form-control mb-2" placeholder="Name" />
 
-  <input type="number" class="form-control mb-2" placeholder="Special Power" />
+    <input type="number" [(ngModel)]="character.power" name="power" class="form-control mb-2"
+      placeholder="Special Power" />
 
-  <button type="submit" class="btn btn-primary">Add DBZ Hero</button>
-</form>
+    <button type="submit" class="btn btn-primary" (click)="emitCharacter()">Add DBZ Character</button>
+
+    <pre>{{character | json}}</pre>
+  </form>
+
+</div>
