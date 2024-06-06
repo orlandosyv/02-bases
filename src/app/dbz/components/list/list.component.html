@@ -8,7 +8,7 @@
     let isFirst = first;
     let isLast = last;
     let isEven = even;
-    " class="list-group-item">
+    " class="list-group-item" [ngClass]="{'list-group-item-success': isFirst}">
     <span class="text-secondary">{{i + 1}}. </span>
     <span>Character:</span>
     <span class="text-uppercase fw-bold">{{dbzHero.name}} - </span>
