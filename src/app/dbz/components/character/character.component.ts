@@ -15,13 +15,13 @@ export class CharacterComponent {
     power: 0,
   };
 
-  emitCharacter() {
+  public emitCharacter(): void {
     console.log(this.character);
+
     if (this.character.name.length === 0) return;
 
     this.onNewCharacter.emit(this.character);
 
-    this.character.name = '';
-    this.character.power = 0;
+    this.character = { name: '', power: 0 };
   }
 }
