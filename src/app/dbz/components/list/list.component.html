@@ -3,8 +3,17 @@
 <h4>List of DBZ Heros</h4>
 
 <ul class="list-group">
-  <li *ngFor="let dbzHero of characterList " class="list-group-item">
-    Character: <span class="text-uppercase fw-bold">{{dbzHero.name}}</span> - Power: {{dbzHero.power}}
+  <li *ngFor="let dbzHero of characterList;
+    let i = index;
+    let isFirst = first;
+    let isLast = last;
+    let isEven = even;
+    " class="list-group-item">
+    <span class="text-secondary">{{i + 1}}. </span>
+    <span>Character:</span>
+    <span class="text-uppercase fw-bold">{{dbzHero.name}} - </span>
+    <strong>Power: {{dbzHero.power}}</strong>
+    <span *ngIf="isEven" class="text-danger"> is Even this line</span>
   </li>
 
 </ul>
