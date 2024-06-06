@@ -14,5 +14,10 @@ export class MainPage {
     { name: 'Freezer', power: 300 },
   ];
 
+  onNewCharacterMethod(character: Character): void {
+    console.log('MainPage');
+    console.log(character);
+  }
+
   ngOnInit() {}
 }
