@@ -7,12 +7,17 @@
     let isFirst = first;
     let isLast = last;
     let isEven = even;
-    " class="list-group-item" [ngClass]="{'list-group-item-success': isFirst}">
-    <span class="text-secondary">{{i + 1}}. </span>
-    <span>Character:</span>
-    <span class="text-uppercase fw-bold">{{dbzHero.name}} - </span>
-    <strong>Power: {{dbzHero.power}}</strong>
-    <span *ngIf="isEven" class="text-danger"> is Even this line</span>
+    " class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{'list-group-item-success': isFirst}">
+    <div>
+      <span class="text-secondary">{{i + 1}}. </span>
+      <span class="text-uppercase fw-bold">{{dbzHero.name}} - </span>
+      <strong>Power: {{dbzHero.power}}</strong>
+      <!-- <span *ngIf="isEven" class="text-danger"> is Even this line</span> -->
+    </div>
+
+    <button class="btn btn-danger mx-4" (click)="onDeleteCharacter(i)"> delete </button>
+
   </li>
 
 </ul>

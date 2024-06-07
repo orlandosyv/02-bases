@@ -6,7 +6,7 @@ import { Character } from '../interfaces/character.interface';
   templateUrl: './main-page.component.html',
 })
 export class MainPage {
-  constructor() {}
+  // constructor() {}
 
   public characters: Character[] = [
     { name: 'Piccoro', power: 200 },
@@ -16,6 +16,13 @@ export class MainPage {
 
   onNewCharacterMethod(character: Character): void {
     this.characters.push(character);
+  }
+
+  public onDeleteCharacter(index: number): void {
+    const newArray = this.characters
+      .slice(0, index)
+      .concat(this.characters.slice(index + 1));
+    this.characters = newArray;
   }
 
   // ngOnInit() {}
