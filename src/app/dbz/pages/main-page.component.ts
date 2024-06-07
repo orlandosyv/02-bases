@@ -19,10 +19,11 @@ export class MainPage {
   }
 
   public onDeleteCharacter(index: number): void {
-    const newArray = this.characters
-      .slice(0, index)
-      .concat(this.characters.slice(index + 1));
-    this.characters = newArray;
+    // const newArray = this.characters
+    //   .slice(0, index)
+    //   .concat(this.characters.slice(index + 1));
+    // this.characters = newArray;
+    this.characters.splice(index, 1);
   }
 
   // ngOnInit() {}
