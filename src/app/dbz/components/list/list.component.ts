@@ -15,21 +15,23 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class ListComponent {
   @Input()
-  public characterList: Character[] = [{ name: 'TenShinHan', power: 200 }];
+  public characterList: Character[] = [
+    { id: '', name: 'TenShinHan', power: 200 },
+  ];
 
   // constructor() {}
 
   @Output()
-  public onDeleteIndex: EventEmitter<number> = new EventEmitter();
+  public onDeleteIndex: EventEmitter<string> = new EventEmitter();
 
   // public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   // @Input()
-  public onDeleteCharacter(index: number): void {
+  public onDeleteCharacter(id?: string): void {
     //TODO: emitir el Id del char
-    console.log({ index });
-
-    this.onDeleteIndex.emit(index);
+    if (!id) return;
+    console.log({ id });
+    this.onDeleteIndex.emit(id);
   }
 
   // ngOnInit() {}
