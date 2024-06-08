@@ -7,8 +7,19 @@ import { DbzService } from '../services/dbz.service';
   templateUrl: './main-page.component.html',
 })
 export class MainPage {
-  constructor(public dbzService: DbzService) {
-    // dbzService.characters
+  constructor(private dbzService: DbzService) {}
+  // dbzService.characters
+
+  get characters(): Character[] {
+    return [...this.dbzService.characters];
+  }
+
+  onDeleteCharacter(id: string) {
+    this.dbzService.deleteCharacterById(id);
+  }
+
+  onNewCharacterMP(character: Character): void {
+    this.dbzService.addCharacter(character);
   }
 
   // ngOnInit() {}
