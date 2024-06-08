@@ -10,6 +10,7 @@ export class DbzService {
     { id: uuid(), name: 'Piccoro', power: 200 },
     { id: uuid(), name: 'Trunks', power: 360 },
     { id: uuid(), name: 'Freezer', power: 300 },
+    { id: uuid(), name: 'Dodoria', power: 180 },
   ];
 
   addCharacter(character: Character): void {
